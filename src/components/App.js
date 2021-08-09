@@ -1,11 +1,20 @@
-import './App.css';
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {handleInitialData} from '../actions/init';
+import '../assets/styles/App.css';
 
-function App() {
-  return (
-    <h1>
-      Starter Code
-    </h1>
-  );
+class App extends Component {
+  componentDidMount() {
+    this.props.dispatch(handleInitialData());
+  }
+
+  render() {
+    if (this.props.loading) {
+      return <h1>loading</h1>;
+    } else {
+      return <h1>Done!</h1>;
+    }
+  }
 }
 
-export default App;
+export default connect((state) => ({loading: state.loading}))(App);
