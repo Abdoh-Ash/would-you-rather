@@ -1,5 +1,5 @@
 // IMPORTS
-import {_getUsers, _getQuestions} from '../utils/_DATA';
+import {_getUsers, _getQuestions} from '../server/api/_DATA';
 
 // ACTION CONSTANTS
 const INIT_DATA = 'INIT_DATA';
@@ -8,7 +8,6 @@ const INIT_DATA = 'INIT_DATA';
 function createInitDataAction(users, questions) {
   return {
     type: INIT_DATA,
-    authedUser: null,
     users,
     questions
   };

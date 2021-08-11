@@ -2,10 +2,10 @@
 const SIGN_IN = 'SIGN_IN';
 
 // ACTION CREATORS
-function createSignInAction(user) {
+function createSignInAction(userID) {
   return {
     type: SIGN_IN,
-    user
+    userID
   };
 }
 

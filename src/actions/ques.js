@@ -1,5 +1,5 @@
 // IMPORTS
-import {_saveQuestion, _saveQuestionAnswer} from '../utils/_DATA';
+import {_saveQuestion, _saveQuestionAnswer} from '../server/api/_DATA';
 
 // ACTION CONSTANTS
 const ADD_QUESTION = 'ADD_QUESTION';
@@ -13,35 +13,25 @@ function createAddQuestionAction(question) {
   return obj;
 }
 
-function createAnswerQuestionAction(authedUser, qid, answer) {
-  return {
-    type: ANSWER_QUESTION,
-    payload: {
-      authedUser,
-      qid,
-      answer
-    }
-  };
-}
-
-function createUnanswerQuestionAction(authedUser, qid, answer) {
-  return {
-    type: UNANSWER_QUESTION,
-    payload: {
-      authedUser,
-      qid,
-      answer
-    }
+function createToggleQuestionAction(type) {
+  return function (authedUser, qid, answer) {
+    return {
+      type,
+      payload: {
+        authedUser,
+        qid,
+        answer
+      }
+    };
   };
 }
 
 // ASYNCHRONOUS ACTION CREATORS
-function handleAddQuestion(payload, callback) {
+function handleAddQuestion(payload) {
   return function (dispatch) {
     _saveQuestion(payload)
       .then((question) => {
         dispatch(createAddQuestionAction(question));
-        callback();
       })
       .catch(() => alert('An error occurred, please try again!'));
   };
@@ -50,9 +40,9 @@ function handleAddQuestion(payload, callback) {
 function handleAnswerQuestion(payload) {
   return function (dispatch) {
     const {authedUser, qid, answer} = payload;
-    dispatch(createAnswerQuestionAction(authedUser, qid, answer));
+    dispatch(createToggleQuestionAction(ANSWER_QUESTION)(authedUser, qid, answer));
     _saveQuestionAnswer(payload).catch(() => {
-      dispatch(createUnanswerQuestionAction(authedUser, qid, answer));
+      dispatch(createToggleQuestionAction(UNANSWER_QUESTION)(authedUser, qid, answer));
       alert('An error occurred, please try again!');
     });
   };

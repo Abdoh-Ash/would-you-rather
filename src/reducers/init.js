@@ -2,10 +2,10 @@
 import {INIT_DATA} from '../actions/init';
 
 // REDUCER
-function initReducer(state = true, action) {
+function initReducer(state = false, action) {
   switch (action.type) {
     case INIT_DATA:
-      return false;
+      return true;
     default:
       return state;
   }

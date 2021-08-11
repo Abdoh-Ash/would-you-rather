@@ -2,7 +2,7 @@
 export default function logger(store) {
   return function (next) {
     return function (action) {
-      console.group();
+      console.group('Store update:');
       console.log('The action:', action);
       console.log('The previous state:', store.getState());
       next(action);

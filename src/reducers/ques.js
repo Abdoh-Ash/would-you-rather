@@ -1,7 +1,7 @@
 // IMPORTS
 import {cloneDeep} from 'lodash';
-import {ADD_QUESTION, ANSWER_QUESTION, UNANSWER_QUESTION} from '../actions/question';
 import {INIT_DATA} from '../actions/init';
+import {ADD_QUESTION, ANSWER_QUESTION, UNANSWER_QUESTION} from '../actions/ques';
 
 // REDUCER
 function questionReducer(state = {}, action) {
@@ -12,15 +12,15 @@ function questionReducer(state = {}, action) {
       return action.questions;
 
     case ADD_QUESTION:
-      newState[action[Object.keys(action)[1]]] = action[Object.keys(action)[1]];
+      newState[Object.keys(action)[1]] = action[Object.keys(action)[1]];
       return newState;
 
     case ANSWER_QUESTION:
-      newState[action.payload.qid][action.payload.answer].push(action.payload.authedUser);
+      newState[action.payload.qid][action.payload.answer].votes.push(action.payload.authedUser);
       return newState;
 
     case UNANSWER_QUESTION:
-      newState[action.payload.qid][action.payload.answer] = newState[action.payload.qid][action.payload.answer].filter(
+      newState[action.payload.qid][action.payload.answer].votes = newState[action.payload.qid][action.payload.answer].votes.filter(
         (user) => user !== action.payload.authedUser
       );
       return newState;

@@ -3,12 +3,12 @@ import {combineReducers} from 'redux';
 import initReducer from './init';
 import authReducer from './auth';
 import userReducer from './user';
-import questionReducer from './question';
+import questionReducer from './ques';
 
 // REDUCER
 const rootReducer = combineReducers({
-  loading: initReducer,
-  authedUser: authReducer,
+  initialized: initReducer,
+  authedUserID: authReducer,
   users: userReducer,
   questions: questionReducer
 });
