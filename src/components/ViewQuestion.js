@@ -40,6 +40,10 @@ class ViewQuestion extends Component {
     const question = this.props.questions[qid];
     const user = this.props.users[question.author];
 
+    const optionOneVotesCount = question.optionOne.votes.length;
+    const optionTwoVotesCount = question.optionTwo.votes.length;
+    const totalVotesCount = optionOneVotesCount + optionTwoVotesCount;
+
     return (
       <article className="card my-3">
         <header className="card-header">
@@ -62,9 +66,7 @@ class ViewQuestion extends Component {
               <label className="btn btn-outline-primary" htmlFor="btnradio1">
                 {capitalize(lowerCase(question.optionOne.text)) +
                   (this.state.didAnswer
-                    ? ` [${question.optionOne.votes.length} out of ${Object.keys(this.props.users).length} (${Math.round(
-                        (question.optionOne.votes.length / Object.keys(this.props.users).length) * 100
-                      )}%) chose this]`
+                    ? ` [${optionOneVotesCount} out of ${totalVotesCount} (${Math.round((optionOneVotesCount / totalVotesCount) * 100)}%) chose this]`
                     : '')}
               </label>
               <input
@@ -79,9 +81,7 @@ class ViewQuestion extends Component {
               <label className="btn btn-outline-primary" htmlFor="btnradio2">
                 {capitalize(lowerCase(question.optionTwo.text)) +
                   (this.state.didAnswer
-                    ? ` [${question.optionTwo.votes.length} out of ${Object.keys(this.props.users).length} (${Math.round(
-                        (question.optionTwo.votes.length / Object.keys(this.props.users).length) * 100
-                      )}%) chose this]`
+                    ? ` [${optionTwoVotesCount} out of ${totalVotesCount} (${Math.round((optionTwoVotesCount / totalVotesCount) * 100)}%) chose this]`
                     : '')}
               </label>
             </div>

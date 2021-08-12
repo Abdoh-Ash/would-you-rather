@@ -2,20 +2,20 @@
 
 This is a web app built using ReactJS, ReduxJS, and their ecosystem as a project for an online course at Udacity.
 
-# How to lunch the app?
+## Getting Started
 
-Well, it is as simple as executing ```npm install``` and ```npm start``` commands through the terminal.
+It is as simple as executing ```npm install``` and ```npm start``` commands through the terminal.
 Furthermore, the app will be hosted at http://localhost:3000/
 
-# Features of the app
+## Features
 
 - The ability to create "Would-You-Rather?" questions.
 - The ability to answer the aforementioned questions.
-- The ability to compete through a leaderboard as one of the set of predefined users.
+- The ability to compete through a leaderboard as one of a set of predefined users.
 
-# How to interact with the app?
+## Usage
 
-Well, when you visit the link provided above in the *How to lunch the app?* section, you will be presented with a page that prompts you to sign-in.
+When you visit the link provided above in the *How to lunch the app?* section, you will be presented with a page that prompts you to sign-in.
 
 You currently can sign-in as one of a set of three pre-defined users, no credentials needed.
 
@@ -29,8 +29,12 @@ Once you're there, you'll have two empty text fields to enter the choices you'd 
 
 Feeling like a champion yet? See how your performance compares to other users by clicking on the **Leaderboard** button in the navigation bar.
 
-Wanna sign-in as another user? Simple! Just click on the **Log-Out** button in the navigation bar. Note that the currently signed-in user has its name displayed next to aforementioned button.
+Want to sign-in as another user? Simple! Just click on the **Log-Out** button in the navigation bar. Note that the currently signed-in user has its name displayed next to aforementioned button.
 
-# Final words
+## Authors
 
-Hope you have fun with the app, best wishes from the developer!
+- **Abdulrahman Alkhateeb**
+
+## License
+
+This project is licensed under the GNU GPLv3 License - see the [LICENSE.md](LICENSE.md) file for details

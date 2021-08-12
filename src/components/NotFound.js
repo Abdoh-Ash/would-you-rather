@@ -3,7 +3,7 @@ import {Redirect, useLocation} from 'react-router-dom';
 
 function NotFound(props) {
   const pathname = useLocation().pathname;
-  
+
   if (!props.loggedIn) {
     return <Redirect to={{pathname: '/authentication', state: {from: pathname}}} />;
   }
