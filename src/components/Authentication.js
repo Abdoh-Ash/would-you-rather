@@ -21,7 +21,7 @@ function Authentication(props) {
             value={props.authedUserId || 'none'}
             onChange={(event) => {
               props.dispatch(createSignInAction(event.target.value));
-              history.push(props.location.state.from);
+              props.location.state ? history.push(props.location.state.from) : history.push('/');
             }}>
             <option value="none" disabled={true}>
               None

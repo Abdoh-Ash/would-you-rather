@@ -5,16 +5,15 @@ import {Redirect} from 'react-router-dom';
 
 class ViewQuestion extends Component {
   state = {
-    notFound: false,
     didAnswer: false,
     answer: null
   };
 
   componentDidMount() {
     if (!(this.props.qid in this.props.questions)) {
-      this.setState({notFound: true});
+      return;
     }
-
+    
     if (this.props.questions[this.props.qid].optionOne.votes.includes(this.props.authedUserID)) {
       this.setState({didAnswer: true, answer: 'optionOne'});
     } else if (this.props.questions[this.props.qid].optionTwo.votes.includes(this.props.authedUserID)) {
@@ -30,10 +29,10 @@ class ViewQuestion extends Component {
   }
 
   render() {
-    if (!this.props.loggedIn) {
-      return <Redirect to={{pathname: '/authentication', state: {from: this.props.location.pathname}}} />;
-    } else if (this.state.notFound) {
+    if (!(this.props.qid in this.props.questions)) {
       return <Redirect to="/not-found" />;
+    } else if (!this.props.loggedIn) {
+      return <Redirect to={{pathname: '/authentication', state: {from: this.props.location.pathname}}} />;
     }
 
     const authedUser = this.props.authedUserID;
@@ -50,7 +49,7 @@ class ViewQuestion extends Component {
         <section className="card-body">
           <h5 className="card-title">Would you rather?</h5>
           <div className="container card-text">
-            <div className="btn-group-vertical" role="group" aria-label="Basic radio toggle button group">
+            <div className="btn-group-vertical" role="group">
               <input
                 type="radio"
                 className="btn-check"
