@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Switch, Route} from 'react-router-dom';
 import {connect} from 'react-redux';
-import {NavBar, Dashboard, ViewQuestion, NewQuestion, Leaderboard, Authentication} from './components/index';
+import {NavBar, Dashboard, ViewQuestion, NewQuestion, Leaderboard, Authentication, NotFound} from './components/index';
 import {handleInitialData} from './actions/init';
 
 class App extends Component {
@@ -23,7 +23,7 @@ class App extends Component {
               <Route path="/new/question" exact={true} component={NewQuestion} />
               <Route path="/leaderboard" exact={true} component={Leaderboard} />
               <Route path="/authentication" exact={true} component={Authentication} />
-              <Route render={() => <h1>Not found!</h1>} />
+              <Route component={NotFound} />
             </Switch>
           </main>
         ) : (

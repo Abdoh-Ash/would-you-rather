@@ -47,7 +47,7 @@ class ViewQuestion extends Component {
           <img src={user.avatarURL} className="img-fluid img-thumbnail me-2" width="30rem" height="30rem" alt="Avatar URL" />
           {`${user.name} asked:`}
         </header>
-        <div className="card-body">
+        <section className="card-body">
           <h5 className="card-title">Would you rather?</h5>
           <div className="container card-text">
             <div className="btn-group-vertical" role="group" aria-label="Basic radio toggle button group">
@@ -87,7 +87,7 @@ class ViewQuestion extends Component {
               </label>
             </div>
           </div>
-        </div>
+        </section>
       </article>
     );
   }

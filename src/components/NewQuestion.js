@@ -27,7 +27,7 @@ class NewQuestion extends React.Component {
     return (
       <article className="card my-3">
         <header className="card-header">Would you rather?</header>
-        <div className="card-body">
+        <section className="card-body">
           <div className="container card-text">
             <form>
               <div className="mb-3">
@@ -47,7 +47,7 @@ class NewQuestion extends React.Component {
               </button>
             </form>
           </div>
-        </div>
+        </section>
       </article>
     );
   }
