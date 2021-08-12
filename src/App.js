@@ -19,8 +19,8 @@ class App extends Component {
           <main>
             <Switch>
               <Route path="/" exact={true} component={Dashboard} />
-              <Route path="/question/:id" exact={true} component={ViewQuestion} />
-              <Route path="/new/question" exact={true} component={NewQuestion} />
+              <Route path="/questions/:id" exact={true} component={ViewQuestion} />
+              <Route path="/add" exact={true} component={NewQuestion} />
               <Route path="/leaderboard" exact={true} component={Leaderboard} />
               <Route path="/authentication" exact={true} component={Authentication} />
               <Route component={NotFound} />

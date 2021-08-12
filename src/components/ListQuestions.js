@@ -14,7 +14,7 @@ function ListQuestions(props) {
           <section className="card-body">
             <h5 className="card-title">Would you rather?</h5>
             <p className="card-text">{`${question.optionOne.text} or ${question.optionTwo.text}`}</p>
-            <Link to={`question/${question.id}`} className="btn btn-primary">
+            <Link to={`questions/${question.id}`} className="btn btn-primary">
               View
             </Link>
           </section>

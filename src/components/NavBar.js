@@ -11,7 +11,7 @@ function NavBar(props) {
           <Link className="nav-link" to="/">
             Dashboard
           </Link>
-          <Link className="nav-link" to="/new/question">
+          <Link className="nav-link" to="/add">
             New Question
           </Link>
           <Link className="nav-link" to="/leaderboard">
