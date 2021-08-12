@@ -19,17 +19,17 @@ Well, when you visit the link provided above in the *How to lunch the app?* sect
 
 You currently can sign-in as one of a set of three pre-defined users, no credentials needed.
 
-Once you sign-in, you'll be redirected to the home page *Dashboard*, and when you find yourself there, you'll by default be faced with the questions that haven't been answered by the currently signed-in user, you can change that by clicking on the *Answered Questions* tab.
+Once you sign-in, you'll be redirected to the home page **Dashboard**, and when you find yourself there, you'll by default be faced with the questions that haven't been answered by the currently signed-in user, you can change that by clicking on the **Answered Questions** tab.
 
-Each question displayed in the lists of either tab can have its details viewed by clicking on the *view* button under each question.
+Each question displayed in the lists of either tab can have its details viewed by clicking on the **View** button under each question.
 
-If you're feeling like you want to have some fun, why not create a question yourself, simply click on the *New Question* button in the navigation bar.
+If you're feeling like you want to have some fun, why not create a question yourself, simply click on the **New Question** button in the navigation bar.
 
-Once you're there, you'll have two empty text fields to enter the choices you'd like your question to have, and when done, just click the *Post* button.
+Once you're there, you'll have two empty text fields to enter the choices you'd like your question to have, and when done, just click the **Post** button.
 
-Feeling like a champion yet? See how your performance compares to other users by clicking on the *Leaderboard* button in the navigation bar.
+Feeling like a champion yet? See how your performance compares to other users by clicking on the **Leaderboard** button in the navigation bar.
 
-Wanna sign-in as another user? Simple! Just click on the *Log-Out* button in the navigation bar. Note that the currently signed-in user has its name displayed next to aforementioned button.
+Wanna sign-in as another user? Simple! Just click on the **Log-Out** button in the navigation bar. Note that the currently signed-in user has its name displayed next to aforementioned button.
 
 # Final words
 
