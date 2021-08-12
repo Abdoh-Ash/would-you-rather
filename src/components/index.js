@@ -7,7 +7,7 @@ import VIEW_QUESTION from './ViewQuestion';
 import NEW_QUESTION from './NewQuestion';
 import LEADERBOARD from './Leaderboard';
 import AUTHENTICATION from './Authentication';
-import NotFound from './NotFound';
+import NOTFOUND from './NotFound';
 
 const NavBar = connect((state) => ({loggedIn: state.authedUserID !== null, authedUser: state.users[state.authedUserID]}))(NAVBAR);
 
@@ -59,5 +59,7 @@ const Leaderboard = connect(function (state) {
 })(LEADERBOARD);
 
 const Authentication = connect((state) => ({users: values(state.users), authedUserId: state.authedUserID}))(AUTHENTICATION);
+
+const NotFound = connect((state) => ({loggedIn: state.authedUserID !== null}))(NOTFOUND);
 
 export {NavBar, Dashboard, ViewQuestion, NewQuestion, Leaderboard, Authentication, NotFound};

@@ -13,7 +13,7 @@ class ViewQuestion extends Component {
     if (!(this.props.qid in this.props.questions)) {
       return;
     }
-    
+
     if (this.props.questions[this.props.qid].optionOne.votes.includes(this.props.authedUserID)) {
       this.setState({didAnswer: true, answer: 'optionOne'});
     } else if (this.props.questions[this.props.qid].optionTwo.votes.includes(this.props.authedUserID)) {
